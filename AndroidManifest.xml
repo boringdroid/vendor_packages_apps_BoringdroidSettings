@@ -1,0 +1,38 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          coreApp="true"
+          android:sharedUserId="android.uid.system"
+          package="com.boringdroid.settings">
+
+    <application
+            android:label="@string/ic_name"
+            android:icon="@drawable/ic_icon"
+            android:taskAffinity=""
+            android:theme="@style/Theme.Settings"
+            android:hardwareAccelerated="true"
+            android:requiredForAllUsers="true"
+            android:supportsRtl="true"
+            android:allowBackup="false"
+            android:usesCleartextTraffic="true"
+            android:defaultToDeviceProtectedStorage="true">
+
+        <activity
+                android:name=".BoringdroidSettings"
+                android:icon="@drawable/ic_icon"
+                android:label="@string/ic_name"
+                android:exported="true">
+            <intent-filter>
+                <action android:name="com.android.settings.action.EXTRA_SETTINGS"/>
+            </intent-filter>
+
+            <meta-data
+                    android:name="com.android.settings.category"
+                    android:value="com.android.settings.category.ia.homepage"/>
+            <meta-data
+                    android:name="com.android.settings.title"
+                    android:value="@string/boringdorid_dashboard_title"/>
+            <meta-data
+                    android:name="com.android.settings.summary"
+                    android:value="@string/boringdorid_dashboard_summary"/>
+        </activity>
+    </application>
+</manifest>

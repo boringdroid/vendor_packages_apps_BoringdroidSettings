@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ic_name" translatable="false">Boringdroid Settings</string>
+    <string name="boringdorid_dashboard_title" translatable="false">Boringdroid</string>
+    <string name="boringdorid_dashboard_summary" translatable="false">Config Boringdroid features</string>
+</resources>
