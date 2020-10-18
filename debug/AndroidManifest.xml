@@ -2,10 +2,13 @@
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:sharedUserId="android.uid.system"
-    package="com.boringdroid.settings">
+    package="com.boringdroid.settings"
+    android:sharedUserId="android.uid.system">
 
-    <application tools:ignore="AllowBackup,MissingApplicationIcon">
+    <application
+        android:name=".BoringdroidSettingsApplication"
+        android:theme="@style/Theme.Settings"
+        tools:ignore="AllowBackup,MissingApplicationIcon">
         <activity
             android:name=".BoringdroidSettings"
             android:exported="true"

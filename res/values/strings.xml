@@ -3,4 +3,12 @@
     <string name="ic_name" translatable="false">Boringdroid Settings</string>
     <string name="boringdorid_dashboard_title" translatable="false">Boringdroid</string>
     <string name="boringdorid_dashboard_summary" translatable="false">Config Boringdroid features</string>
+    <string name="title_switch_enable_pc_mode">Enable pc mode</string>
+    <string name="title_switch_enable_bd_nav_bar">Enable Boringdroid Navigation Bar</string>
+    <string name="title_category_pc_mode">PC Mode</string>
+    <string name="key_category_pc_mode">category_pc_mode</string>
+    <string name="key_category_bd_systemui">category_bd_systemui</string>
+    <string name="key_switch_enable_bd_nav_bar">enable_bd_nav_bar</string>
+    <string name="title_category_bd_systemui">Boringdroid SystemUI</string>
+    <string name="key_switch_enable_pc_mode">enable_pc_mode</string>
 </resources>

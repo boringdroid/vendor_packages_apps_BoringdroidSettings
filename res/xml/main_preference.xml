@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory
+        app:key="@string/key_category_pc_mode"
+        app:title="@string/title_category_pc_mode">
+
+        <SwitchPreferenceCompat
+            app:key="@string/key_switch_enable_pc_mode"
+            app:title="@string/title_switch_enable_pc_mode" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:key="@string/key_category_bd_systemui"
+        app:title="@string/title_category_bd_systemui">
+        <SwitchPreferenceCompat
+            app:key="@string/key_switch_enable_bd_nav_bar"
+            app:title="@string/title_switch_enable_bd_nav_bar" />
+    </PreferenceCategory>
+</PreferenceScreen>
