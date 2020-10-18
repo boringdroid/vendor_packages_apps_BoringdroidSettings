@@ -23,5 +23,14 @@ android_app {
         enabled: false,
     },
 
-    defaults: ["SettingsLibDefaults"],
+    static_libs: [
+        "androidx.annotation_annotation",
+        "androidx.lifecycle_lifecycle-common",
+        "androidx.legacy_legacy-support-v4",
+        "androidx.lifecycle_lifecycle-runtime",
+        "androidx.recyclerview_recyclerview",
+        "androidx.preference_preference",
+        "androidx.appcompat_appcompat",
+        "androidx.legacy_legacy-preference-v14",
+    ],
 }
