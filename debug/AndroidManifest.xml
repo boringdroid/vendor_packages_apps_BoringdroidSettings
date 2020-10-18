@@ -7,17 +7,6 @@
 
     <application tools:ignore="AllowBackup,MissingApplicationIcon">
         <activity
-            android:name="com.boringdroid.settings.DebugActivity"
-            android:label="@string/ic_name"
-            android:largeHeap="true"
-            android:supportsRtl="false">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-
-        <activity
             android:name=".BoringdroidSettings"
             android:exported="true"
             android:icon="@drawable/ic_icon"
@@ -35,6 +24,11 @@
             <meta-data
                 android:name="com.android.settings.summary"
                 android:value="@string/boringdorid_dashboard_summary" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 

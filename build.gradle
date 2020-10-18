@@ -50,7 +50,7 @@ android {
     sourceSets {
         main {
             res.srcDirs = ['res']
-            java.srcDirs = ['src', 'debug/src']
+            java.srcDirs = ['src']
             manifest.srcFile 'debug/AndroidManifest.xml'
         }
     }
