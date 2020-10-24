@@ -67,12 +67,12 @@ android {
 
 dependencies {
     // Current system use this version, we should keep it.
-    implementation 'androidx.annotation:annotation:1.0.0'
-    implementation 'androidx.lifecycle:lifecycle-common:1.0.0'
-    implementation 'androidx.lifecycle:lifecycle-runtime:1.0.0'
-    implementation 'androidx.recyclerview:recyclerview:1.0.0'
-    implementation 'androidx.preference:preference:1.0.0'
-    implementation 'androidx.appcompat:appcompat:1.0.0'
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'androidx.legacy:legacy-preference-v14:1.0.0'
+    implementation 'androidx.annotation:annotation:1.0.0-alpha1'
+    implementation 'androidx.lifecycle:lifecycle-common:2.0.0-alpha1'
+    implementation 'androidx.lifecycle:lifecycle-runtime:2.0.0-alpha1'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0-alpha1'
+    implementation 'androidx.preference:preference:1.0.0-alpha1'
+    implementation 'androidx.appcompat:appcompat:1.0.0-alpha1'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0-alpha1'
+    implementation 'androidx.legacy:legacy-preference-v14:1.0.0-alpha1'
 }
