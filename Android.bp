@@ -16,7 +16,6 @@ android_app {
     certificate: "platform",
     privileged: true,
 
-    platform_apis: true,
     srcs: ["src/**/*.java"],
     resource_dirs: ["res"],
     optimize: {
