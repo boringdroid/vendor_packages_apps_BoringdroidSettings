@@ -1,6 +1,10 @@
 package com.boringdroid.settings;
 
 import android.annotation.SuppressLint;
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -55,6 +59,20 @@ public class BoringdroidSettingsFragment extends PreferenceFragmentCompat {
     private void enableBoringdroidSystemUI(boolean enable) {
         Log.d(TAG, "enable Boringdroid SystemUI " + enable);
         setBooleanSystemProperties(PROPERTY_BD_SYSTEMUI_KEY, enable);
+        Context context = getActivity();
+        if (context != null) {
+            String packageName = context.getPackageName();
+            Intent intent =
+                    new Intent("com.android.systemui.action.RESTART")
+                            .setData(Uri.parse("package://" + packageName));
+            ComponentName cn =
+                    new ComponentName(
+                            "com.android.systemui",
+                            "com.android.systemui.SysuiRestartReceiver"
+                    );
+            intent.setComponent(cn);
+            context.sendBroadcast(intent);
+        }
     }
 
     private void setBooleanSystemProperties(String key, boolean value) {
