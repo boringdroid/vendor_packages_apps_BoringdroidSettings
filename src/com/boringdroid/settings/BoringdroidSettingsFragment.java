@@ -49,6 +49,29 @@ public class BoringdroidSettingsFragment extends PreferenceFragmentCompat {
             enableBoringdroidSystemUI(((SwitchPreferenceCompat) preference).isChecked());
             return true;
         });
+
+        findPreference(getString(R.string.key_bd_developer))
+                .setOnPreferenceClickListener(preference -> {
+                    openURL("https://github.com/utzcoz");
+                    return true;
+                });
+
+        findPreference(getString(R.string.key_bd_github))
+                .setOnPreferenceClickListener(preference -> {
+                    openURL("https://github.com/boringdroid");
+                    return true;
+                });
+
+        findPreference(getString(R.string.key_bd_group))
+                .setOnPreferenceClickListener(preference -> {
+                    openURL("http://blissos.org/");
+                    return true;
+                });
+    }
+
+    private void openURL(String url) {
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+        startActivity(intent);
     }
 
     private void enablePCMode(boolean enable) {
