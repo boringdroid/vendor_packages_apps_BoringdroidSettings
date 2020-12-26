@@ -11,4 +11,14 @@
     <string name="key_switch_enable_bd_nav_bar">enable_bd_nav_bar</string>
     <string name="title_category_bd_systemui">Boringdroid SystemUI</string>
     <string name="key_switch_enable_pc_mode">enable_pc_mode</string>
+    <string name="key_category_bd_about">About</string>
+    <string name="title_category_bd_about">About</string>
+    <string name="title_bd_developer">Developer</string>
+    <string name="summary_bd_developer">The Boringdroid is developed by utzcoz</string>
+    <string name="title_bd_developer_github">GitHub</string>
+    <string name="key_bd_developer">key_bd_developer</string>
+    <string name="key_bd_github">key_bd_github</string>
+    <string name="title_bd_github">GitHub</string>
+    <string name="summary_bd_github">https://github.com/boringdroid</string>
+    <string name="key_bd_group">key_bd_group</string>
 </resources>

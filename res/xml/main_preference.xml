@@ -18,4 +18,21 @@
             app:key="@string/key_switch_enable_bd_nav_bar"
             app:title="@string/title_switch_enable_bd_nav_bar" />
     </PreferenceCategory>
+
+    <PreferenceCategory
+        app:key="@string/key_category_bd_about"
+        app:title="@string/title_category_bd_about">
+        <Preference
+            app:key="@string/key_bd_developer"
+            app:summary="@string/summary_bd_developer"
+            app:title="@string/title_bd_developer" />
+        <Preference
+            app:key="@string/key_bd_github"
+            app:summary="@string/summary_bd_github"
+            app:title="@string/title_bd_github" />
+        <Preference
+            app:key="@string/key_bd_group"
+            app:summary="The Boringdroid is a Bliss Family Project"
+            app:title="Bliss Family Project" />
+    </PreferenceCategory>
 </PreferenceScreen>
