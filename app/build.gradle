@@ -5,9 +5,9 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
 repositories {
+    mavenCentral()
     google()
     jcenter()
-    mavenCentral()
 }
 
 spotless {

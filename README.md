@@ -12,3 +12,6 @@ you push changes to the repository for reviewing:
 ./gradlew spotlessCheck
 ./gradlew spotlessApply
 ``` 
+
+If you encounter an error when use `./gradlew spotlessApply`, you should fix format errors 
+manually, because the Spotless based formatter can't fix all errors.  
