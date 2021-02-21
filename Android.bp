@@ -17,8 +17,8 @@ android_app {
     privileged: true,
 
     platform_apis: true,
-    srcs: ["src/**/*.java"],
-    resource_dirs: ["res"],
+    srcs: ["app/src/main/java/**/*.java"],
+    resource_dirs: ["app/src/main/res"],
     optimize: {
         enabled: false,
     },
