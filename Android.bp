@@ -17,11 +17,16 @@ android_app {
     privileged: true,
 
     platform_apis: true,
-    srcs: ["app/src/main/java/**/*.java"],
+    srcs: [
+        "app/src/main/java/**/*.kt",
+        "app/src/main/java/**/*.java",
+    ],
     resource_dirs: ["app/src/main/res"],
     optimize: {
         enabled: false,
     },
+
+    kotlincflags: ["-Xjvm-default=enable"],
 
     static_libs: [
         "androidx.annotation_annotation",
