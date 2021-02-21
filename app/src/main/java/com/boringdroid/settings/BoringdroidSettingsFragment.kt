@@ -99,8 +99,10 @@ class BoringdroidSettingsFragment : PreferenceFragmentCompat() {
 
     private fun getBooleanSystemProperties(key: String): Boolean {
         try {
-            @SuppressLint("PrivateApi") val clazz = Class.forName(SYSTEM_PROPERTIES_CLASS_NAME)
-            val setMethod = clazz.getMethod("getBoolean", String::class.java, Boolean::class.javaPrimitiveType)
+            @SuppressLint("PrivateApi")
+            val clazz = Class.forName(SYSTEM_PROPERTIES_CLASS_NAME)
+            val setMethod = clazz.getMethod("getBoolean",
+                    String::class.java, Boolean::class.javaPrimitiveType)
             return setMethod.invoke(null, key, true) as Boolean
         } catch (e: ClassNotFoundException) {
             Log.d(TAG, "Failed to get value for $key")
