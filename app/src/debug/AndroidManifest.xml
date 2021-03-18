@@ -1,4 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     coreApp="true"
     package="com.boringdroid.settings"
     android:sharedUserId="android.uid.system">
@@ -14,26 +17,20 @@
         android:supportsRtl="true"
         android:taskAffinity=""
         android:theme="@style/Theme.Settings"
-        android:usesCleartextTraffic="true">
+        android:usesCleartextTraffic="true"
+        tools:node="merge">
 
         <activity
             android:name=".BoringdroidSettings"
             android:exported="true"
             android:icon="@drawable/ic_icon"
-            android:label="@string/ic_name">
+            android:label="@string/ic_name"
+            tools:node="merge">
             <intent-filter>
-                <action android:name="com.android.settings.action.EXTRA_SETTINGS" />
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-            <meta-data
-                android:name="com.android.settings.category"
-                android:value="com.android.settings.category.ia.homepage" />
-            <meta-data
-                android:name="com.android.settings.title"
-                android:value="@string/boringdorid_dashboard_title" />
-            <meta-data
-                android:name="com.android.settings.summary"
-                android:value="@string/boringdorid_dashboard_summary" />
         </activity>
     </application>
 </manifest>
+
