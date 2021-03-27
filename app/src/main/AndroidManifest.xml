@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+    coreApp="true"
     package="com.boringdroid.settings"
     android:sharedUserId="android.uid.system">
 
     <application
         android:name=".BoringdroidSettingsApplication"
+        android:allowBackup="false"
+        android:defaultToDeviceProtectedStorage="true"
+        android:hardwareAccelerated="true"
+        android:icon="@drawable/ic_icon"
+        android:label="@string/ic_name"
+        android:requiredForAllUsers="true"
+        android:supportsRtl="true"
+        android:taskAffinity=""
         android:theme="@style/Theme.Settings"
-        tools:ignore="AllowBackup,MissingApplicationIcon">
+        android:usesCleartextTraffic="true">
+
         <activity
             android:name=".BoringdroidSettings"
             android:exported="true"
@@ -27,12 +36,6 @@
             <meta-data
                 android:name="com.android.settings.summary"
                 android:value="@string/boringdorid_dashboard_summary" />
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
-
 </manifest>

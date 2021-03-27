@@ -1,78 +1,21 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
+    ext.kotlin_version = '1.4.31'
     repositories {
+        mavenCentral()
         google()
         jcenter()
-        mavenCentral()
     }
     dependencies {
-        classpath "com.android.tools.build:gradle:4.1.0"
+        classpath "com.android.tools.build:gradle:4.1.2"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
 
 allprojects {
     repositories {
+        mavenCentral()
         google()
         jcenter()
     }
-}
-
-apply plugin: 'com.android.application'
-
-android {
-    compileSdkVersion 29
-    buildToolsVersion "29.0.3"
-
-    defaultConfig {
-        applicationId "com.boringdroid.settings"
-        minSdkVersion 28
-        targetSdkVersion 29
-        versionCode 100
-        versionName "100"
-    }
-
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-    }
-
-    signingConfigs {
-        debug {
-            keyAlias 'androiddebugkey'
-            keyPassword 'android'
-            storeFile file('plugin.keystore')
-            storePassword 'android'
-        }
-    }
-
-    sourceSets {
-        main {
-            res.srcDirs = ['res']
-            java.srcDirs = ['src']
-            manifest.srcFile 'debug/AndroidManifest.xml'
-        }
-    }
-
-    lintOptions {
-        abortOnError false
-    }
-
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-}
-
-dependencies {
-    // Current system use this version, we should keep it.
-    implementation 'androidx.annotation:annotation:1.0.0-alpha1'
-    implementation 'androidx.lifecycle:lifecycle-common:2.0.0-alpha1'
-    implementation 'androidx.lifecycle:lifecycle-runtime:2.0.0-alpha1'
-    implementation 'androidx.recyclerview:recyclerview:1.0.0-alpha1'
-    implementation 'androidx.preference:preference:1.0.0-alpha1'
-    implementation 'androidx.appcompat:appcompat:1.0.0-alpha1'
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0-alpha1'
-    implementation 'androidx.legacy:legacy-preference-v14:1.0.0-alpha1'
 }
