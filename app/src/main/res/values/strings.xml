@@ -21,4 +21,6 @@
     <string name="title_bd_github">GitHub</string>
     <string name="summary_bd_github">https://github.com/boringdroid</string>
     <string name="key_bd_group">key_bd_group</string>
+    <string name="summary_bd_group">The Boringdroid is a Bliss Family Project</string>
+    <string name="title_bd_group">Bliss Family Project</string>
 </resources>

@@ -32,7 +32,7 @@
             app:title="@string/title_bd_github" />
         <Preference
             app:key="@string/key_bd_group"
-            app:summary="The Boringdroid is a Bliss Family Project"
-            app:title="Bliss Family Project" />
+            app:summary="@string/summary_bd_group"
+            app:title="@string/title_bd_group" />
     </PreferenceCategory>
 </PreferenceScreen>
