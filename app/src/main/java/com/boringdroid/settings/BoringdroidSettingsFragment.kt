@@ -13,45 +13,45 @@ import androidx.preference.SwitchPreferenceCompat
 import java.lang.reflect.InvocationTargetException
 
 class BoringdroidSettingsFragment : PreferenceFragmentCompat() {
-    private lateinit var mSwitchEnablePCMode: SwitchPreferenceCompat
-    private lateinit var mSwitchEnabledBoringdroidSystemUI: SwitchPreferenceCompat
+    private lateinit var switchEnablePCMode: SwitchPreferenceCompat
+    private lateinit var switchEnabledBoringdroidSystemUI: SwitchPreferenceCompat
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         setPreferencesFromResource(R.xml.main_preference, rootKey)
-        mSwitchEnablePCMode = findPreference<Preference>(
-                getString(R.string.key_switch_enable_pc_mode)
+        switchEnablePCMode = findPreference<Preference>(
+            getString(R.string.key_switch_enable_pc_mode)
         ) as SwitchPreferenceCompat
-        mSwitchEnablePCMode.isChecked = getBooleanSystemProperties(PROPERTY_PC_MODE_KEY)
-        mSwitchEnabledBoringdroidSystemUI = findPreference<Preference>(
-                getString(R.string.key_switch_enable_bd_nav_bar)
+        switchEnablePCMode.isChecked = getBooleanSystemProperties(PROPERTY_PC_MODE_KEY)
+        switchEnabledBoringdroidSystemUI = findPreference<Preference>(
+            getString(R.string.key_switch_enable_bd_nav_bar)
         ) as SwitchPreferenceCompat
-        mSwitchEnabledBoringdroidSystemUI.isChecked =
-                getBooleanSystemProperties(PROPERTY_BD_SYSTEMUI_KEY)
-        mSwitchEnablePCMode.onPreferenceClickListener =
-                Preference.OnPreferenceClickListener { preference: Preference ->
-                    enablePCMode((preference as SwitchPreferenceCompat).isChecked)
-                    true
-                }
-        mSwitchEnabledBoringdroidSystemUI.onPreferenceClickListener =
-                Preference.OnPreferenceClickListener { preference: Preference ->
-                    enableBoringdroidSystemUI((preference as SwitchPreferenceCompat).isChecked)
-                    true
-                }
+        switchEnabledBoringdroidSystemUI.isChecked =
+            getBooleanSystemProperties(PROPERTY_BD_SYSTEMUI_KEY)
+        switchEnablePCMode.onPreferenceClickListener =
+            Preference.OnPreferenceClickListener { preference: Preference ->
+                enablePCMode((preference as SwitchPreferenceCompat).isChecked)
+                true
+            }
+        switchEnabledBoringdroidSystemUI.onPreferenceClickListener =
+            Preference.OnPreferenceClickListener { preference: Preference ->
+                enableBoringdroidSystemUI((preference as SwitchPreferenceCompat).isChecked)
+                true
+            }
         findPreference<Preference>(getString(R.string.key_bd_developer))
-                ?.setOnPreferenceClickListener { _: Preference ->
-                    openURL("https://github.com/utzcoz")
-                    true
-                }
+            ?.setOnPreferenceClickListener { _: Preference ->
+                openURL("https://github.com/utzcoz")
+                true
+            }
         findPreference<Preference>(getString(R.string.key_bd_github))
-                ?.setOnPreferenceClickListener { _: Preference ->
-                    openURL("https://github.com/boringdroid")
-                    true
-                }
+            ?.setOnPreferenceClickListener { _: Preference ->
+                openURL("https://github.com/boringdroid")
+                true
+            }
         findPreference<Preference>(getString(R.string.key_bd_group))
-                ?.setOnPreferenceClickListener { _: Preference ->
-                    openURL("http://blissos.org/")
-                    true
-                }
+            ?.setOnPreferenceClickListener { _: Preference ->
+                openURL("http://blissos.org/")
+                true
+            }
     }
 
     private fun openURL(url: String) {
@@ -71,10 +71,10 @@ class BoringdroidSettingsFragment : PreferenceFragmentCompat() {
         if (context != null) {
             val packageName = context.packageName
             val intent = Intent("com.android.systemui.action.RESTART")
-                    .setData(Uri.parse("package://$packageName"))
+                .setData(Uri.parse("package://$packageName"))
             val cn = ComponentName(
-                    "com.android.systemui",
-                    "com.android.systemui.SysuiRestartReceiver"
+                "com.android.systemui",
+                "com.android.systemui.SysuiRestartReceiver"
             )
             intent.component = cn
             context.sendBroadcast(intent)
@@ -101,8 +101,10 @@ class BoringdroidSettingsFragment : PreferenceFragmentCompat() {
         try {
             @SuppressLint("PrivateApi")
             val clazz = Class.forName(SYSTEM_PROPERTIES_CLASS_NAME)
-            val setMethod = clazz.getMethod("getBoolean",
-                    String::class.java, Boolean::class.javaPrimitiveType)
+            val setMethod = clazz.getMethod(
+                "getBoolean",
+                String::class.java, Boolean::class.javaPrimitiveType
+            )
             return setMethod.invoke(null, key, true) as Boolean
         } catch (e: ClassNotFoundException) {
             Log.d(TAG, "Failed to get value for $key")
