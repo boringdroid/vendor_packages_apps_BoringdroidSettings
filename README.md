@@ -16,11 +16,21 @@ you push changes to the repository for reviewing:
 If you encounter an error when use `./gradlew spotlessApply`, you should fix format errors 
 manually, because the Spotless based formatter can't fix all errors.
 
+## Test
+
+This project has some instrumentation tests, and you should use the below command to check
+tests before you push changes to the repository for reviewing:
+
+```shell
+./gradlew connectedAndroidTest
+```
+
 ## Release
 
 The `BoringdroidSettings` is released with apk, and you can use the following commands build apk:
 
 ```shell script
+
 ./gradlew build
 ```
 
