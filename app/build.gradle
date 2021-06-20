@@ -7,7 +7,7 @@ apply plugin: 'kotlin-android'
 repositories {
 	mavenCentral()
 	google()
-	jcenter()
+	gradlePluginPortal()
 }
 
 spotless {
