@@ -27,7 +27,7 @@ class BoringdroidFullscreenManageFragment : PreferenceFragmentCompat() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View {
         val result = super.onCreateView(inflater, container, savedInstanceState)
         val adapter = AppListAdapter(requireContext())
@@ -53,10 +53,11 @@ class BoringdroidFullscreenManageFragment : PreferenceFragmentCompat() {
             appInfo.isFullscreen = windowingMode == fullscreenWindowingMode
             allApps.add(appInfo)
             Log.d(
-                TAG, "package ${appInfo.packageName} " +
-                        "windowing mode $windowingMode " +
-                        "fullscreenWindowingMode $fullscreenWindowingMode " +
-                        "forceFullscreen ${appInfo.isFullscreen}"
+                TAG,
+                "package ${appInfo.packageName} " +
+                    "windowing mode $windowingMode " +
+                    "fullscreenWindowingMode $fullscreenWindowingMode " +
+                    "forceFullscreen ${appInfo.isFullscreen}",
             )
         }
         adapter.setData(allApps)
@@ -92,11 +93,15 @@ class BoringdroidFullscreenManageFragment : PreferenceFragmentCompat() {
             holder.switchChangeToFullscreen.setOnCheckedChangeListener { _, isChecked ->
                 appInfo.isFullscreen = isChecked
                 val windowingMode =
-                    if (appInfo.isFullscreen) WINDOWING_MODE_FULLSCREEN
-                    else WINDOWING_MODE_UNDEFINED
+                    if (appInfo.isFullscreen) {
+                        WINDOWING_MODE_FULLSCREEN
+                    } else {
+                        WINDOWING_MODE_UNDEFINED
+                    }
                 Log.d(
-                    TAG, "checked changed ${appInfo.packageName} " +
-                            "value ${appInfo.isFullscreen} windowingMode $windowingMode"
+                    TAG,
+                    "checked changed ${appInfo.packageName} " +
+                        "value ${appInfo.isFullscreen} windowingMode $windowingMode",
                 )
                 savePackageOverlayWindowingMode(appInfo.packageName, windowingMode)
             }
@@ -164,7 +169,8 @@ class BoringdroidFullscreenManageFragment : PreferenceFragmentCompat() {
             try {
                 val clazz = Class.forName("com.android.internal.BoringdroidManager")
                 val setMethod = clazz.getMethod(
-                    "getPackageOverlayWindowingMode", String::class.java
+                    "getPackageOverlayWindowingMode",
+                    String::class.java,
                 )
                 return setMethod.invoke(null, packageName) as Int
             } catch (e: ClassNotFoundException) {
@@ -185,7 +191,9 @@ class BoringdroidFullscreenManageFragment : PreferenceFragmentCompat() {
             try {
                 val clazz = Class.forName("com.android.internal.BoringdroidManager")
                 val setMethod = clazz.getMethod(
-                    "savePackageOverlayWindowingMode", String::class.java, Int::class.java
+                    "savePackageOverlayWindowingMode",
+                    String::class.java,
+                    Int::class.java,
                 )
                 setMethod.invoke(null, packageName, windowingMode)
             } catch (e: ClassNotFoundException) {
