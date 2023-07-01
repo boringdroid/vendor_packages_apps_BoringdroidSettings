@@ -8,9 +8,9 @@ class BoringdroidSettings : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.settings_main)
         supportFragmentManager
-                .beginTransaction()
-                .replace(R.id.settings_container, BoringdroidSettingsFragment())
-                .commit()
+            .beginTransaction()
+            .replace(R.id.settings_container, BoringdroidSettingsFragment())
+            .commit()
 
         // Enable back button for preference activity
         supportActionBar?.run {
