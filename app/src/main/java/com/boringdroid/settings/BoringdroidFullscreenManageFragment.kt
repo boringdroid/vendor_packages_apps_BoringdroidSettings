@@ -28,7 +28,7 @@ class BoringdroidFullscreenManageFragment : PreferenceFragmentCompat() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         val result = super.onCreateView(inflater, container, savedInstanceState)
         val adapter = AppListAdapter(requireContext())
         if (listView != null) {
