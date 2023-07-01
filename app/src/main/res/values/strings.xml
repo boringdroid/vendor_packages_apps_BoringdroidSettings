@@ -20,8 +20,8 @@
     <string name="title_bd_github">GitHub</string>
     <string name="summary_bd_github">https://github.com/boringdroid</string>
     <string name="key_bd_group">key_bd_group</string>
-    <string name="summary_bd_group">The Boringdroid is a Bliss Family Project</string>
-    <string name="title_bd_group">Bliss Family Project</string>
+    <string name="summary_bd_group">The Boringdroid is a BlissLabs Project</string>
+    <string name="title_bd_group">BlissLabs Project</string>
     <string name="key_set_all_fullscreen_apps">set_bd_all_fullscreen_apps</string>
     <string name="title_set_all_fullscreen_apps">Set all fullscreen app</string>
     <string name="hint_app_icon">App icon</string>
