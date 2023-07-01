@@ -2,7 +2,6 @@
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     coreApp="true"
-    package="com.boringdroid.settings"
     android:sharedUserId="android.uid.system">
 
     <application
