@@ -29,13 +29,13 @@ spotless {
 
 android {
 	namespace "com.boringdroid.settings"
-	compileSdkVersion 30
-	buildToolsVersion "30.0.3"
+	compileSdk 33
+	buildToolsVersion = "33.0.0"
 
 	defaultConfig {
 		applicationId "com.boringdroid.settings"
 		minSdkVersion 28
-		targetSdkVersion 30
+		targetSdkVersion 33
 		versionCode 130
 		versionName "130"
 
