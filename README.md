@@ -30,7 +30,6 @@ tests before you push changes to the repository for reviewing:
 The `BoringdroidSettings` is released with apk, and you can use the following commands build apk:
 
 ```shell script
-
 ./gradlew build
 ```
 
