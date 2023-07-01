@@ -35,8 +35,8 @@ android {
 		applicationId "com.boringdroid.settings"
 		minSdkVersion 28
 		targetSdkVersion 30
-		versionCode 100
-		versionName "100"
+		versionCode 130
+		versionName "130"
 
 		testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 	}
