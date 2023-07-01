@@ -65,7 +65,7 @@ class BoringdroidSettingsFragment : PreferenceFragmentCompat() {
     }
 
     private fun enableBoringdroidSystemUI(enable: Boolean) {
-        Log.d(TAG, "enable Boringdroid SystemUI $enable")
+        Log.d(TAG, "enable boringdroid SystemUI $enable")
         setBooleanSystemProperties(PROPERTY_BD_SYSTEMUI_KEY, enable)
         val context: Context? = activity
         if (context != null) {
