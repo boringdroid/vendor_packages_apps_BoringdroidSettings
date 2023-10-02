@@ -22,10 +22,10 @@ jobs:
         distribution: zulu
     - name: Setup Gradle
       uses: gradle/gradle-build-action@v2
-    - name: Build with Gradle
-      run: ./gradlew build
     - name: Spotless Check
       run: ./gradlew spotlessCheck
+    - name: Build with Gradle
+      run: ./gradlew build
     - name: Upload Release APK
       uses: actions/upload-artifact@v3
       with:
