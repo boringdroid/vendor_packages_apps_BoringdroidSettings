@@ -16,15 +16,20 @@ class BoringdroidSettingsFragment : PreferenceFragmentCompat() {
     private lateinit var switchEnablePCMode: SwitchPreferenceCompat
     private lateinit var switchEnabledBoringdroidSystemUI: SwitchPreferenceCompat
 
-    override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
+    override fun onCreatePreferences(
+        savedInstanceState: Bundle?,
+        rootKey: String?,
+    ) {
         setPreferencesFromResource(R.xml.main_preference, rootKey)
-        switchEnablePCMode = findPreference<Preference>(
-            getString(R.string.key_switch_enable_pc_mode),
-        ) as SwitchPreferenceCompat
+        switchEnablePCMode =
+            findPreference<Preference>(
+                getString(R.string.key_switch_enable_pc_mode),
+            ) as SwitchPreferenceCompat
         switchEnablePCMode.isChecked = getBooleanSystemProperties(PROPERTY_PC_MODE_KEY)
-        switchEnabledBoringdroidSystemUI = findPreference<Preference>(
-            getString(R.string.key_switch_enable_bd_nav_bar),
-        ) as SwitchPreferenceCompat
+        switchEnabledBoringdroidSystemUI =
+            findPreference<Preference>(
+                getString(R.string.key_switch_enable_bd_nav_bar),
+            ) as SwitchPreferenceCompat
         switchEnabledBoringdroidSystemUI.isChecked =
             getBooleanSystemProperties(PROPERTY_BD_SYSTEMUI_KEY)
         switchEnablePCMode.onPreferenceClickListener =
@@ -70,18 +75,23 @@ class BoringdroidSettingsFragment : PreferenceFragmentCompat() {
         val context: Context? = activity
         if (context != null) {
             val packageName = context.packageName
-            val intent = Intent("com.android.systemui.action.RESTART")
-                .setData(Uri.parse("package://$packageName"))
-            val cn = ComponentName(
-                "com.android.systemui",
-                "com.android.systemui.SysuiRestartReceiver",
-            )
+            val intent =
+                Intent("com.android.systemui.action.RESTART")
+                    .setData(Uri.parse("package://$packageName"))
+            val cn =
+                ComponentName(
+                    "com.android.systemui",
+                    "com.android.systemui.SysuiRestartReceiver",
+                )
             intent.component = cn
             context.sendBroadcast(intent)
         }
     }
 
-    private fun setBooleanSystemProperties(key: String, value: Boolean) {
+    private fun setBooleanSystemProperties(
+        key: String,
+        value: Boolean,
+    ) {
         try {
             @SuppressLint("PrivateApi")
             val clazz = Class.forName(SYSTEM_PROPERTIES_CLASS_NAME)
@@ -102,11 +112,12 @@ class BoringdroidSettingsFragment : PreferenceFragmentCompat() {
         try {
             @SuppressLint("PrivateApi")
             val clazz = Class.forName(SYSTEM_PROPERTIES_CLASS_NAME)
-            val setMethod = clazz.getMethod(
-                "getBoolean",
-                String::class.java,
-                Boolean::class.javaPrimitiveType,
-            )
+            val setMethod =
+                clazz.getMethod(
+                    "getBoolean",
+                    String::class.java,
+                    Boolean::class.javaPrimitiveType,
+                )
             return setMethod.invoke(null, key, true) as Boolean
         } catch (e: ClassNotFoundException) {
             Log.d(TAG, "Failed to get value for $key")

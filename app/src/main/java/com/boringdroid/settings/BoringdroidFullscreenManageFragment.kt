@@ -20,7 +20,10 @@ import androidx.recyclerview.widget.RecyclerView
 import java.lang.reflect.InvocationTargetException
 
 class BoringdroidFullscreenManageFragment : PreferenceFragmentCompat() {
-    override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
+    override fun onCreatePreferences(
+        savedInstanceState: Bundle?,
+        rootKey: String?,
+    ) {
         // Do nothing
     }
 
@@ -75,15 +78,22 @@ class BoringdroidFullscreenManageFragment : PreferenceFragmentCompat() {
                 itemView.findViewById(R.id.switch_change_to_fullscreen)
         }
 
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-            val appInfoLayout = LayoutInflater.from(context)
-                .inflate(R.layout.layout_app_info, parent, false)
+        override fun onCreateViewHolder(
+            parent: ViewGroup,
+            viewType: Int,
+        ): ViewHolder {
+            val appInfoLayout =
+                LayoutInflater.from(context)
+                    .inflate(R.layout.layout_app_info, parent, false)
             return ViewHolder(appInfoLayout)
         }
 
         override fun getItemCount(): Int = apps.size
 
-        override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        override fun onBindViewHolder(
+            holder: ViewHolder,
+            position: Int,
+        ) {
             val appInfo = apps[position]
             holder.ivIcon.setImageDrawable(appInfo.icon)
             holder.tvName.text = appInfo.label
@@ -122,7 +132,7 @@ class BoringdroidFullscreenManageFragment : PreferenceFragmentCompat() {
     }
 
     companion object {
-        var TAG = "FullscreenManage"
+        const val TAG = "FullscreenManage"
         val WINDOWING_MODE_FULLSCREEN = getFullscreenWindowingMode()
         val WINDOWING_MODE_UNDEFINED = getUndefinedWindowingMode()
 
@@ -168,10 +178,11 @@ class BoringdroidFullscreenManageFragment : PreferenceFragmentCompat() {
         private fun getPackageWindowingMode(packageName: String): Int {
             try {
                 val clazz = Class.forName("com.android.internal.BoringdroidManager")
-                val setMethod = clazz.getMethod(
-                    "getPackageOverlayWindowingMode",
-                    String::class.java,
-                )
+                val setMethod =
+                    clazz.getMethod(
+                        "getPackageOverlayWindowingMode",
+                        String::class.java,
+                    )
                 return setMethod.invoke(null, packageName) as Int
             } catch (e: ClassNotFoundException) {
                 Log.d(TAG, "Failed to get package windowing mode", e)
@@ -186,15 +197,19 @@ class BoringdroidFullscreenManageFragment : PreferenceFragmentCompat() {
         }
 
         @SuppressLint("PrivateApi")
-        private fun savePackageOverlayWindowingMode(packageName: String, windowingMode: Int) {
+        private fun savePackageOverlayWindowingMode(
+            packageName: String,
+            windowingMode: Int,
+        ) {
             Environment.getDataDirectory()
             try {
                 val clazz = Class.forName("com.android.internal.BoringdroidManager")
-                val setMethod = clazz.getMethod(
-                    "savePackageOverlayWindowingMode",
-                    String::class.java,
-                    Int::class.java,
-                )
+                val setMethod =
+                    clazz.getMethod(
+                        "savePackageOverlayWindowingMode",
+                        String::class.java,
+                        Int::class.java,
+                    )
                 setMethod.invoke(null, packageName, windowingMode)
             } catch (e: ClassNotFoundException) {
                 Log.d(TAG, "Failed to save package windowing mode", e)
