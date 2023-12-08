@@ -13,7 +13,7 @@ repositories {
 spotless {
 	format 'misc', {
 		// define the files to apply `misc` to
-		target '*.gradle', '*.md', '.gitignore'
+		target '*.md', '.gitignore'
 
 		// define the steps to apply to those files
 		trimTrailingWhitespace()
@@ -21,9 +21,14 @@ spotless {
 		endWithNewline()
 	}
 
+	groovyGradle {
+		target '*.gradle', '**/*.gradle'
+		greclipse()
+	}
+
 	kotlin {
 		target '**/*.kt'
-		ktlint()userData(['max_line_length': '100'])
+		ktfmt().kotlinlangStyle()
 	}
 }
 
