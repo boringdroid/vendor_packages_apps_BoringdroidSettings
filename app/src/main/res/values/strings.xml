@@ -25,4 +25,5 @@
     <string name="key_set_all_fullscreen_apps">set_bd_all_fullscreen_apps</string>
     <string name="title_set_all_fullscreen_apps">Set all fullscreen app</string>
     <string name="hint_app_icon">App icon</string>
+    <string name="action_back">Back</string>
 </resources>

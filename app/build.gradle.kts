@@ -4,8 +4,9 @@ import org.gradle.jvm.toolchain.JavaToolchainService
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
-    id("com.diffplug.spotless") version "7.2.1"
+    id("com.diffplug.spotless") version "8.2.1"
     id("com.android.application")
+    id("org.jetbrains.kotlin.plugin.compose")
 }
 
 repositories {
@@ -71,6 +72,8 @@ android {
         baseline = file("lint-baseilne.xml")
     }
 
+    buildFeatures { compose = true }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
@@ -89,19 +92,25 @@ tasks.withType<JavaCompile>().configureEach {
 }
 
 dependencies {
+    implementation(platform("androidx.compose:compose-bom:2026.02.00"))
     implementation("androidx.annotation:annotation:1.9.1")
-    implementation("androidx.lifecycle:lifecycle-common:2.9.4")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.9.4")
+    implementation("androidx.lifecycle:lifecycle-common:2.10.0")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.10.0")
+    implementation("androidx.activity:activity-compose:1.12.4")
     implementation("androidx.recyclerview:recyclerview:1.4.0")
     implementation("androidx.appcompat:appcompat:1.7.1")
     implementation("androidx.core:core-ktx:1.17.0")
+    implementation("androidx.compose.ui:ui")
+    implementation("androidx.compose.ui:ui-tooling-preview")
+    implementation("androidx.compose.material3:material3")
     implementation("androidx.preference:preference-ktx:1.2.1")
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.2.20")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.3.10")
+    debugImplementation("androidx.compose.ui:ui-tooling")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test:runner:1.7.0")
     androidTestImplementation("androidx.test:rules:1.7.0")
-    androidTestImplementation("com.google.truth:truth:1.4.4")
-    androidTestImplementation("com.google.truth.extensions:truth-java8-extension:1.4.4")
+    androidTestImplementation("com.google.truth:truth:1.4.5")
+    androidTestImplementation("com.google.truth.extensions:truth-java8-extension:1.4.5")
     androidTestImplementation("androidx.test.ext:junit:1.3.0")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.7.0")
     androidTestImplementation("androidx.test.uiautomator:uiautomator:2.3.0")
