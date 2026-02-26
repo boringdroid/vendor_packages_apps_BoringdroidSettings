@@ -29,7 +29,10 @@ class BoringdroidFullscreenManageFragment : PreferenceFragmentCompat() {
         container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View {
-        val result = super.onCreateView(inflater, container, savedInstanceState)
+        // region @boringdroid - super.onCreateView returns View? but our signature is View
+        // val result = super.onCreateView(inflater, container, savedInstanceState)
+        val result = super.onCreateView(inflater, container, savedInstanceState)!!
+        // endregion
         val adapter = AppListAdapter(requireContext())
         if (listView != null) {
             listView.adapter = adapter
