@@ -5,6 +5,10 @@
     coreApp="true"
     android:sharedUserId="android.uid.system">
 
+    <!-- Auto-granted because the APK is platform-signed; used to persist the per-app
+         windowing-mode override map under Settings.Secure.boringdroid_app_windowing_modes. -->
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
+
     <application
         android:name=".BoringdroidSettingsApplication"
         android:allowBackup="false"
@@ -19,10 +23,10 @@
         android:usesCleartextTraffic="true">
 
         <activity
-            android:name=".BoringdroidSettings"
+            android:name=".AppBehaviorActivity"
             android:exported="true"
-            android:icon="@drawable/ic_icon"
-            android:label="@string/ic_name">
+            android:icon="@drawable/ic_select_window"
+            android:label="@string/app_behavior_injection_title">
             <intent-filter>
                 <action android:name="com.android.settings.action.EXTRA_SETTINGS" />
             </intent-filter>
@@ -32,10 +36,36 @@
                 android:value="com.android.settings.category.ia.homepage" />
             <meta-data
                 android:name="com.android.settings.title"
-                android:value="@string/boringdorid_dashboard_title" />
+                android:value="@string/app_behavior_injection_title" />
             <meta-data
                 android:name="com.android.settings.summary"
-                android:value="@string/boringdorid_dashboard_summary" />
+                android:value="@string/app_behavior_injection_summary" />
+            <meta-data
+                android:name="com.android.settings.icon"
+                android:resource="@drawable/ic_select_window" />
+        </activity>
+
+        <activity
+            android:name=".AboutBoringdroidActivity"
+            android:exported="true"
+            android:icon="@drawable/ic_info"
+            android:label="@string/about_boringdroid_injection_title">
+            <intent-filter>
+                <action android:name="com.android.settings.action.EXTRA_SETTINGS" />
+            </intent-filter>
+
+            <meta-data
+                android:name="com.android.settings.category"
+                android:value="com.android.settings.category.ia.homepage" />
+            <meta-data
+                android:name="com.android.settings.title"
+                android:value="@string/about_boringdroid_injection_title" />
+            <meta-data
+                android:name="com.android.settings.summary"
+                android:value="@string/about_boringdroid_injection_summary" />
+            <meta-data
+                android:name="com.android.settings.icon"
+                android:resource="@drawable/ic_info" />
         </activity>
     </application>
 </manifest>

@@ -27,15 +27,12 @@ android_app {
 
     static_libs: [
         "androidx.activity_activity-compose",
-        "androidx.appcompat_appcompat",
         "androidx.annotation_annotation",
         "androidx.compose.foundation_foundation",
         "androidx.compose.material3_material3",
         "androidx.compose.runtime_runtime",
         "androidx.compose.ui_ui",
         "androidx.core_core-ktx",
-        "androidx.preference_preference",
-        "androidx.recyclerview_recyclerview",
         "kotlinx-coroutines-android",
         "kotlinx-coroutines-core",
     ],
