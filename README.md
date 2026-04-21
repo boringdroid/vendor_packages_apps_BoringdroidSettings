@@ -1,39 +1,30 @@
 # BoringdroidSettings
 
-The settings app for Boringdroid.
+The settings app for boringdroid. Injects two entries into the stock
+AOSP Settings dashboard via `EXTRA_SETTINGS` so users can toggle
+boringdroid-specific modes without a standalone Settings app launcher.
 
-## Spotless
+## Build
 
-This project uses [Spotless](https://github.com/diffplug/spotless/tree/main/plugin-gradle) to
-format source code, and you can use the below command to check and format source code before
-you push changes to the repository for reviewing:
+`BoringdroidSettings` ships as an AOSP module — the build is Soong.
+From the AOSP root:
 
 ```shell
-./gradlew spotlessCheck
-./gradlew spotlessApply
-``` 
+source build/envsetup.sh
+lunch boringdroid_x86_64-userdebug
+m BoringdroidSettings
+```
 
-If you encounter an error when use `./gradlew spotlessApply`, you should fix format errors 
-manually, because the Spotless based formatter can't fix all errors.
+`Android.bp` declares the module as `android_app` with `platform_apis`
+and the platform certificate so the EXTRA_SETTINGS entries resolve
+against the system Settings app.
 
 ## Test
 
-This project has some instrumentation tests, and you should use the below command to check
-tests before you push changes to the repository for reviewing:
+Instrumentation tests run through the shared test runner used across
+the boringdroid-owned apps:
 
 ```shell
-./gradlew connectedAndroidTest
+m BoringdroidSettings
+bash .claude/scripts/run-boringdroid-tests.sh
 ```
-
-## Release
-
-The `BoringdroidSettings` is released with apk, and you can use the following commands build apk:
-
-```shell script
-./gradlew build
-```
-
-And copy the `app/build/outputs/apk/release/app-release-unsigned.apk` as the released apk to the 
-release repository.
-
-Also, we can download latest build APK from GitHub Action's artifacts.
