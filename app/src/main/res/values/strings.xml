@@ -12,46 +12,68 @@
 
     <!-- App display behavior screen -->
     <string name="app_behavior_title">App display behavior</string>
-    <string name="app_behavior_subtitle">Override how specific apps open on this device. Tap an app to pick a display mode.</string>
+    <string name="app_behavior_subtitle">Override how specific apps open on this device. Select one or more apps, then choose a display mode — or tap a single app to set its mode individually.</string>
     <string name="app_behavior_filter_all">All</string>
-    <string name="app_behavior_filter_user">User</string>
-    <string name="app_behavior_filter_system">System</string>
-    <string name="app_behavior_filter_modified">Modified</string>
+    <string name="app_behavior_filter_freeform">Free-form</string>
+    <string name="app_behavior_filter_fullscreen">Fullscreen</string>
+    <string name="app_behavior_filter_default">Default</string>
+    <string name="app_behavior_filter_user">User apps</string>
+    <string name="app_behavior_installed_apps">Installed apps</string>
+    <string name="app_behavior_selected_count">%1$d selected</string>
+    <string name="app_behavior_select_all">Select all</string>
+    <string name="app_behavior_clear_selection">Clear</string>
+    <string name="app_behavior_bulk_freeform">Free-form</string>
+    <string name="app_behavior_bulk_fullscreen">Fullscreen</string>
+    <string name="app_behavior_bulk_reset">Reset</string>
+    <string name="app_behavior_bulk_applied">%1$d apps · %2$s</string>
     <string name="app_behavior_mode_default">System default</string>
-    <string name="app_behavior_mode_default_desc">Follow the app\u2019s own preference</string>
+    <string name="app_behavior_mode_default_desc">Follow the app’s own preference</string>
     <string name="app_behavior_mode_freeform">Force free-form</string>
     <string name="app_behavior_mode_freeform_desc">Always open as a resizable window on the desktop</string>
     <string name="app_behavior_mode_fullscreen">Force fullscreen</string>
     <string name="app_behavior_mode_fullscreen_desc">Always open maximized to the full screen</string>
-    <string name="app_behavior_snackbar_updated">%1$s \u00b7 %2$s</string>
+    <string name="app_behavior_mode_chip_freeform">Free-form</string>
+    <string name="app_behavior_mode_chip_fullscreen">Fullscreen</string>
+    <string name="app_behavior_mode_chip_default">Default</string>
+    <string name="app_behavior_snackbar_updated">%1$s · %2$s</string>
     <string name="app_behavior_snackbar_undo">Undo</string>
-    <string name="app_behavior_loading">Loading apps\u2026</string>
+    <string name="app_behavior_loading">Loading apps…</string>
 
     <!-- About Boringdroid screen -->
     <string name="about_title">About Boringdroid</string>
     <string name="about_hero_name">Boringdroid</string>
     <string name="about_hero_tagline">A PC-style shell for Android</string>
-    <string name="about_hero_version">System plugin \u00b7 v%1$s</string>
+    <string name="about_hero_version">System plugin · v%1$s</string>
     <string name="about_hero_description">Boringdroid brings a taskbar, free-form windows, app drawer and overview to AOSP without sacrificing the familiar mobile experience.</string>
+    <string name="about_hero_action_website">Website</string>
+    <string name="about_hero_action_github">GitHub</string>
+    <string name="about_hero_action_report">Report issue</string>
+
+    <string name="about_group_project">Project</string>
+    <string name="about_project_version">Version</string>
+    <string name="about_project_version_sub">BoringdroidSettings</string>
+    <string name="about_project_package">Package</string>
+    <string name="about_project_released">Released</string>
+    <string name="about_project_license">License</string>
+    <string name="about_project_license_sub">Apache License 2.0</string>
+    <string name="about_project_source">Source</string>
+    <string name="about_project_source_sub">github.com/boringdroid</string>
 
     <string name="about_group_authors">Authors</string>
     <string name="about_author_maintainer_name">utzcoz</string>
     <string name="about_author_maintainer_role">Maintainer</string>
+    <string name="about_authors_contributors">Contributors</string>
+    <string name="about_authors_contributors_sub">View on GitHub</string>
 
-    <string name="about_group_project">Project</string>
-    <string name="about_project_source">Source code</string>
-    <string name="about_project_source_sub">github.com/boringdroid</string>
-    <string name="about_project_manifest">Manifest</string>
-    <string name="about_project_manifest_sub">repo manifest for boringdroid</string>
-    <string name="about_project_issues">Issues</string>
-    <string name="about_project_issues_sub">Report a bug or feature request</string>
-    <string name="about_project_discussions">Discussions</string>
-    <string name="about_project_discussions_sub">Community conversations</string>
-
-    <string name="about_group_legal">Legal</string>
-    <string name="about_legal_licenses">Open-source licenses</string>
-    <string name="about_legal_licenses_sub">View third-party licenses</string>
+    <string name="about_group_system">System</string>
+    <string name="about_system_android">Android version</string>
+    <string name="about_system_android_sub">%1$s · API %2$d</string>
+    <string name="about_system_host">Host device</string>
+    <string name="about_system_licenses">Open-source licenses</string>
+    <string name="about_system_licenses_sub">View third-party licenses</string>
 
     <string name="hint_app_icon">App icon</string>
     <string name="hint_back">Back</string>
+    <string name="hint_close">Close</string>
+    <string name="hint_open_external">Open</string>
 </resources>

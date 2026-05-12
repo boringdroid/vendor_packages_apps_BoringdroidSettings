@@ -29,6 +29,7 @@ android_app {
         "androidx.activity_activity-compose",
         "androidx.annotation_annotation",
         "androidx.compose.foundation_foundation",
+        "androidx.compose.material_material-icons-extended",
         "androidx.compose.material3_material3",
         "androidx.compose.runtime_runtime",
         "androidx.compose.ui_ui",
@@ -46,4 +47,28 @@ android_app {
     optimize: {
         enabled: false,
     },
+}
+
+android_test {
+    name: "BoringdroidSettingsTests",
+
+    srcs: ["app/src/androidTest/java/**/*.kt"],
+
+    manifest: "app/src/androidTest/AndroidManifest.xml",
+
+    static_libs: [
+        "androidx.test.ext.junit",
+        "androidx.test.rules",
+        "androidx.test.runner",
+        "androidx.test.uiautomator_uiautomator",
+        "junit",
+        "truth-prebuilt",
+    ],
+
+    // Match BoringdroidSettings so the test APK can read Settings.Secure and
+    // launch the platform-signed activities under test.
+    platform_apis: true,
+    certificate: "platform",
+
+    test_suites: ["general-tests"],
 }

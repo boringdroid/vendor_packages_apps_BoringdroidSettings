@@ -21,10 +21,20 @@ against the system Settings app.
 
 ## Test
 
-Instrumentation tests run through the shared test runner used across
-the boringdroid-owned apps:
+Instrumentation tests live under `app/src/androidTest/` and build as
+`BoringdroidSettingsTests.apk`:
 
 ```shell
-m BoringdroidSettings
-bash .claude/scripts/run-boringdroid-tests.sh
+m BoringdroidSettings BoringdroidSettingsTests
+bash .claude/scripts/run-boringdroid-settings-tests.sh
 ```
+
+The script builds both APKs, installs them against a running
+`boringdroid_x86_64-userdebug` emulator, drops adb to shell uid, and
+runs every class in `com.boringdroid.settings`. The suite covers the
+App display behavior screen (filter chips, multi-select bulk bar,
+single-app mode sheet) and the About Boringdroid screen (hero card
+action buttons, Project / Authors / System cards).
+
+Any change touching this module must run the suite and confirm green
+before being committed (see [boringdroid/CLAUDE.md](../../../../boringdroid/CLAUDE.md#verification-for-boringdroidsettings)).
